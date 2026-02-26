@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { leadership, team, type TeamMember } from "@/lib/team";
+import { leadership, team, teamDetails, type TeamMember } from "@/lib/team";
 
 /* ───────────────────────── Compact Hero ───────────────────────── */
 
@@ -73,7 +73,9 @@ function FounderCard({
     return () => obs.disconnect();
   }, []);
 
-  return (
+  const hasDetail = member.slug in teamDetails;
+
+  const card = (
     <div
       ref={ref}
       className={`group relative overflow-hidden rounded-2xl border border-navy/[0.08] bg-white shadow-[0_4px_24px_rgba(43,84,100,0.06)] transition-all duration-700 hover:shadow-[0_12px_40px_rgba(43,84,100,0.12)] ${
@@ -113,9 +115,22 @@ function FounderCard({
           {member.name}
         </h3>
         <p className="mt-1 text-sm font-semibold text-teal">{member.title}</p>
+        {hasDetail && (
+          <span className="mt-3 inline-flex items-center gap-1.5 rounded-lg bg-teal/[0.08] px-4 py-1.5 text-xs font-bold text-teal transition-colors duration-300 group-hover:bg-teal group-hover:text-white">
+            View Profile
+            <svg className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+            </svg>
+          </span>
+        )}
       </div>
     </div>
   );
+
+  if (hasDetail) {
+    return <Link href={`/our-team/${member.slug}`}>{card}</Link>;
+  }
+  return card;
 }
 
 function FoundersSection() {
@@ -137,6 +152,7 @@ function FoundersSection() {
 function TeamCard({ member, index }: { member: TeamMember; index: number }) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
+  const hasDetail = member.slug in teamDetails;
 
   useEffect(() => {
     const el = ref.current;
@@ -154,7 +170,7 @@ function TeamCard({ member, index }: { member: TeamMember; index: number }) {
     return () => obs.disconnect();
   }, []);
 
-  return (
+  const card = (
     <div
       ref={ref}
       className={`group relative overflow-hidden rounded-2xl border border-navy/[0.06] bg-white shadow-[0_2px_16px_rgba(43,84,100,0.05)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_12px_36px_rgba(43,84,100,0.1)] ${
@@ -194,9 +210,22 @@ function TeamCard({ member, index }: { member: TeamMember; index: number }) {
         <p className="mt-0.5 text-xs font-medium text-teal sm:text-sm">
           {member.title}
         </p>
+        {hasDetail && (
+          <span className="mt-2.5 inline-flex items-center gap-1 rounded-lg bg-teal/[0.08] px-3 py-1 text-[11px] font-bold text-teal transition-colors duration-300 group-hover:bg-teal group-hover:text-white">
+            View Profile
+            <svg className="h-3 w-3 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+            </svg>
+          </span>
+        )}
       </div>
     </div>
   );
+
+  if (hasDetail) {
+    return <Link href={`/our-team/${member.slug}`}>{card}</Link>;
+  }
+  return card;
 }
 
 /* ──────────────────────── Team Grid Section ───────────────────── */
