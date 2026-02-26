@@ -11,6 +11,10 @@
   --font-sans: "Montserrat", system-ui, -apple-system, sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: #ffffff;
   color: var(--color-dark);
