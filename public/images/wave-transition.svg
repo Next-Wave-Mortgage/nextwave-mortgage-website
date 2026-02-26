@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 300" preserveAspectRatio="none">
+  <defs>
+    <style>
+      .wave-layer-0 { animation: driftLeft 35s linear infinite; }
+      .wave-layer-1 { animation: driftLeft 25s linear infinite; }
+      .wave-layer-2 { animation: driftLeftMid 18s linear infinite; }
+      .wave-layer-3 { animation: driftLeft 12s linear infinite; }
+
+      .particle-1 { animation: floatUp1 9s ease-in infinite; opacity: 0; }
+      .particle-2 { animation: floatUp2 14s ease-in infinite 3s; opacity: 0; }
+      .particle-3 { animation: floatUp3 11s ease-in infinite 6s; opacity: 0; }
+
+      @keyframes driftLeft {
+        0% { transform: translate3d(0, 0, 0); }
+        100% { transform: translate3d(-1440px, 0, 0); }
+      }
+      @keyframes driftLeftMid {
+        0% { transform: translate3d(0, 0, 0); }
+        100% { transform: translate3d(-1920px, 0, 0); }
+      }
+
+      @keyframes floatUp1 {
+        0% { transform: translate3d(0, 0, 0); opacity: 0; }
+        20% { opacity: 0.6; }
+        80% { opacity: 0.6; }
+        100% { transform: translate3d(-20px, -150px, 0); opacity: 0; }
+      }
+      @keyframes floatUp2 {
+        0% { transform: translate3d(0, 0, 0); opacity: 0; }
+        20% { opacity: 0.5; }
+        80% { opacity: 0.5; }
+        100% { transform: translate3d(15px, -180px, 0); opacity: 0; }
+      }
+      @keyframes floatUp3 {
+        0% { transform: translate3d(0, 0, 0); opacity: 0; }
+        20% { opacity: 0.8; }
+        80% { opacity: 0.8; }
+        100% { transform: translate3d(-10px, -120px, 0); opacity: 0; }
+      }
+    </style>
+
+    <linearGradient id="grad-wave-0" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E5F7FD" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#E5F7FD" stop-opacity="0.6"/>
+    </linearGradient>
+
+    <linearGradient id="grad-wave-1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E5F7FD" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#E5F7FD" stop-opacity="0.8"/>
+    </linearGradient>
+
+    <linearGradient id="grad-wave-2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1C96C5" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#1C96C5" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <linearGradient id="grad-wave-3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2B5464" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#2B5464" stop-opacity="1.0"/>
+    </linearGradient>
+  </defs>
+
+  <path class="wave-layer-0" fill="url(#grad-wave-0)"
+        d="M0,140 Q360,210 720,140 T1440,140 T2160,140 T2880,140 L2880,300 L0,300 Z" />
+
+  <path class="wave-layer-1" fill="url(#grad-wave-1)"
+        d="M0,160 Q360,90 720,160 T1440,160 T2160,160 T2880,160 L2880,300 L0,300 Z" />
+
+  <circle class="particle-1" cx="250" cy="270" r="3" fill="#E5F7FD" />
+  <circle class="particle-2" cx="800" cy="290" r="4.5" fill="#E5F7FD" />
+
+  <path class="wave-layer-2" fill="url(#grad-wave-2)"
+        d="M0,200 Q240,150 480,200 T960,200 T1440,200 T1920,200 T2400,200 T2880,200 L2880,300 L0,300 Z" />
+
+  <circle class="particle-3" cx="1200" cy="280" r="2.5" fill="#1C96C5" />
+
+  <path class="wave-layer-3" fill="url(#grad-wave-3)"
+        d="M0,245 Q180,210 360,245 T720,245 T1080,245 T1440,245 T1800,245 T2160,245 T2520,245 T2880,245 L2880,300 L0,300 Z" />
+</svg>
