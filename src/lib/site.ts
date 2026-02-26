@@ -18,9 +18,9 @@ export const siteConfig = {
   },
   nav: [
     { label: "Loan Originators", href: "/loan-originators" },
+    { label: "BrokerX Program", href: "/brokerx-program" },
     { label: "Real Estate Agents", href: "/real-estate-agents" },
     { label: "Rewards Calculator", href: "/calculators" },
-    { label: "Insights & Resources", href: "/blog" },
     { label: "Our Team", href: "/our-team" },
   ],
   footerNav: [

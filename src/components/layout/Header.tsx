@@ -50,7 +50,7 @@ export default function Header() {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden items-center gap-1 lg:flex">
+        <nav className="hidden items-center gap-2 lg:flex">
           {siteConfig.nav.map((item) => (
             <Link
               key={item.href}
