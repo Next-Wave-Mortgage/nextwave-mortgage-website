@@ -156,8 +156,22 @@ export default function BrokerXPage() {
     return () => observer.disconnect();
   }, []);
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: { "@type": "Answer", text: faq.a },
+    })),
+  };
+
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       {/* ── Hero ────────────────────────────────────── */}
       <section className="relative isolate overflow-hidden bg-navy py-24 sm:py-32">
         {/* Background */}
@@ -208,8 +222,8 @@ export default function BrokerXPage() {
           </p>
 
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <a
-              href="#apply"
+            <Link
+              href="/join/loan-officers"
               className="group relative overflow-hidden rounded-xl bg-teal px-8 py-4 text-sm font-bold text-white shadow-[0_4px_24px_rgba(28,150,197,0.45)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(28,150,197,0.55)] sm:text-base"
             >
               <span className="absolute inset-0 bg-white/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
@@ -219,7 +233,7 @@ export default function BrokerXPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                 </svg>
               </span>
-            </a>
+            </Link>
             <a
               href="#how-it-works"
               className="group flex items-center gap-2 rounded-xl border border-white/20 bg-white/[0.06] px-8 py-4 text-sm font-semibold text-white/90 backdrop-blur-sm transition-all duration-300 hover:border-teal/30 hover:bg-teal/10 hover:text-white sm:text-base"
@@ -442,85 +456,47 @@ export default function BrokerXPage() {
         </div>
       </section>
 
-      {/* ── Apply / Contact Form ────────────────────── */}
+      {/* ── Apply CTA ─────────────────────────────── */}
       <section id="apply" className="scroll-mt-16 relative overflow-hidden bg-white py-24 sm:py-32">
         <div className="pointer-events-none absolute -left-40 bottom-20 h-[400px] w-[400px] rounded-full bg-navy/[0.04] blur-[100px]" />
 
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-5xl lg:flex lg:gap-16">
-            {/* Left — text */}
-            <div className="flex-1">
-              <p className="text-sm font-bold uppercase tracking-widest text-teal">
-                Get Started
-              </p>
-              <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-navy sm:text-4xl">
-                Ready to Start Your Mortgage Career?
-              </h2>
-              <p className="mt-5 text-lg leading-relaxed text-navy/60">
-                We&apos;re looking for motivated individuals who are ready to
-                take the next step. Fill out the form to request more
-                information and schedule a one-on-one consultation with our
-                recruitment team.
-              </p>
-            </div>
-
-            {/* Right — form */}
-            <div className="mt-10 w-full max-w-md shrink-0 lg:mt-0">
-              <form
-                className="rounded-2xl border border-navy/[0.08] bg-white p-6 shadow-[0_4px_24px_rgba(43,84,100,0.08)] sm:p-8"
-                onSubmit={(e) => e.preventDefault()}
-              >
-                <div className="grid gap-4 sm:grid-cols-2">
-                  <div>
-                    <label className="mb-1.5 block text-sm font-bold text-navy">
-                      First Name <span className="text-teal">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      className="w-full rounded-xl border border-navy/[0.12] bg-white px-4 py-3 text-[15px] text-navy outline-none transition-colors focus:border-teal focus:ring-2 focus:ring-teal/20"
-                    />
-                  </div>
-                  <div>
-                    <label className="mb-1.5 block text-sm font-bold text-navy">
-                      Last Name <span className="text-teal">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      className="w-full rounded-xl border border-navy/[0.12] bg-white px-4 py-3 text-[15px] text-navy outline-none transition-colors focus:border-teal focus:ring-2 focus:ring-teal/20"
-                    />
-                  </div>
-                </div>
-                <div className="mt-4">
-                  <label className="mb-1.5 block text-sm font-bold text-navy">
-                    Email <span className="text-teal">*</span>
-                  </label>
-                  <input
-                    type="email"
-                    required
-                    className="w-full rounded-xl border border-navy/[0.12] bg-white px-4 py-3 text-[15px] text-navy outline-none transition-colors focus:border-teal focus:ring-2 focus:ring-teal/20"
-                  />
-                </div>
-                <div className="mt-4">
-                  <label className="mb-1.5 block text-sm font-bold text-navy">
-                    Phone Number <span className="text-teal">*</span>
-                  </label>
-                  <input
-                    type="tel"
-                    required
-                    className="w-full rounded-xl border border-navy/[0.12] bg-white px-4 py-3 text-[15px] text-navy outline-none transition-colors focus:border-teal focus:ring-2 focus:ring-teal/20"
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="group relative mt-6 w-full overflow-hidden rounded-xl bg-teal py-4 text-base font-bold text-white shadow-[0_4px_24px_rgba(28,150,197,0.4)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(28,150,197,0.5)]"
+        <div className="mx-auto max-w-3xl px-6 lg:px-8">
+          <div className="flex flex-col items-center gap-6 rounded-3xl border border-navy/[0.06] bg-navy px-8 py-10 text-center shadow-[0_4px_32px_rgba(43,84,100,0.15)] sm:px-12 sm:py-14">
+            <div className="pointer-events-none absolute -right-16 -top-16 h-[200px] w-[200px] rounded-full bg-teal/[0.10] blur-[80px]" />
+            <p className="text-sm font-bold uppercase tracking-widest text-teal">
+              Get Started
+            </p>
+            <h2 className="text-2xl font-extrabold tracking-tight text-white sm:text-3xl">
+              Ready to Start Your{" "}
+              <span className="text-teal">Mortgage Career?</span>
+            </h2>
+            <p className="max-w-lg text-[15px] leading-relaxed text-white/55">
+              We&apos;re looking for motivated individuals who are ready to take
+              the next step. Fill out a quick form and schedule a one-on-one
+              consultation with our recruitment team.
+            </p>
+            <Link
+              href="/join/loan-officers"
+              className="group relative overflow-hidden rounded-xl bg-teal px-8 py-4 text-sm font-bold text-white shadow-[0_4px_24px_rgba(28,150,197,0.45)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(28,150,197,0.55)] sm:text-base"
+            >
+              <span className="absolute inset-0 bg-white/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              <span className="relative flex items-center gap-2">
+                Apply Now
+                <svg
+                  className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={2.5}
+                  stroke="currentColor"
                 >
-                  <span className="absolute inset-0 bg-white/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                  <span className="relative">Request Information</span>
-                </button>
-              </form>
-            </div>
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+                  />
+                </svg>
+              </span>
+            </Link>
           </div>
         </div>
       </section>

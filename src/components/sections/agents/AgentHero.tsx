@@ -91,7 +91,7 @@ export default function AgentHero() {
           {/* CTAs */}
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
-              href="/apply"
+              href="/join/real-estate-agents"
               className="group relative overflow-hidden rounded-xl bg-teal px-8 py-4 text-sm font-bold text-white shadow-[0_4px_24px_rgba(28,150,197,0.45)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(28,150,197,0.55)] sm:text-base"
             >
               <span className="absolute inset-0 bg-white/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />

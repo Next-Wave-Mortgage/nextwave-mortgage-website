@@ -194,11 +194,10 @@ export default function Footer() {
             <div className="flex flex-col">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/images/Next_Wave_Mortgage_Logo.webp"
+                src="/images/Next_Wave_Mortgage_Logo_White.png"
                 alt={siteConfig.name}
                 width={164}
                 height={44}
-                className="brightness-0 invert"
               />
 
               <p className="mt-6 text-[15px] leading-relaxed text-white/60">

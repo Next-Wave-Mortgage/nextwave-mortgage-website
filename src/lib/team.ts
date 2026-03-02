@@ -118,6 +118,13 @@ export const teamMembers: TeamMember[] = [
     nmls: "2184879",
     image: null,
   },
+  {
+    name: "Lou Casey",
+    slug: "lou-casey",
+    title: "Mortgage Loan Originator",
+    nmls: "",
+    image: "/images/lou-casey.jpg",
+  },
 ];
 
 export const leadership = teamMembers.filter((m) => m.leadership);
@@ -299,6 +306,16 @@ export const teamDetails: Record<string, TeamMemberDetail> = {
     phone: "617-594-5405",
     licensedStates: [],
     applyUrl: "https://nextwave.my1003app.com/12565/register",
+  },
+  "lou-casey": {
+    bio: [
+      "Lou Casey is a licensed Mortgage Loan Originator dedicated to helping clients achieve homeownership and make informed financial decisions. A graduate of Bridgewater State University, he brings a strong foundation in professionalism, financial discipline, and client service to every interaction.",
+      "Lou specializes in guiding borrowers through every step of the mortgage process, from pre-approval to closing, while providing transparent communication and tailored loan solutions. His goal is to ensure a smooth, efficient, and confident financing experience for every client.",
+    ],
+    email: "lou@nextwavemortgage.com",
+    phone: "781-927-4059",
+    licensedStates: [],
+    applyUrl: "/apply",
   },
   "chris-scott": {
     bio: [

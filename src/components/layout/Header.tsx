@@ -40,7 +40,7 @@ export default function Header() {
           className="shrink-0 transition-opacity duration-200 hover:opacity-80"
         >
           <Image
-            src="/images/Next_Wave_Mortgage_Logo.webp"
+            src="/images/Next_Wave_Mortgage_Logo.png"
             alt={siteConfig.name}
             width={220}
             height={56}

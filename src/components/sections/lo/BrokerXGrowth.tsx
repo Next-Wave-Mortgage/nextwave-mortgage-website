@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { siteConfig } from "@/lib/site";
 
 /* ── Count-up hook ─────────────────────────────────────────────── */
 function useCountUp(target: number, active: boolean, duration = 1000) {
@@ -356,7 +355,7 @@ export default function BrokerXGrowth() {
               </p>
             </div>
             <Link
-              href={siteConfig.cta.href}
+              href="/join/loan-officers"
               className="group relative shrink-0 overflow-hidden rounded-xl bg-teal px-7 py-3.5 text-sm font-bold text-white shadow-[0_4px_24px_rgba(28,150,197,0.45)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(28,150,197,0.55)] sm:px-8 sm:py-4 sm:text-base"
             >
               <span className="absolute inset-0 bg-white/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />

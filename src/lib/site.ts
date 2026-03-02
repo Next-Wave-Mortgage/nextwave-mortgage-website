@@ -25,7 +25,7 @@ export const siteConfig = {
   ],
   footerNav: [
     { label: "Our Team", href: "/our-team" },
-    { label: "BrokerX Program", href: "/brokerx" },
+    { label: "BrokerX Program", href: "/brokerx-program" },
     { label: "Terms and Privacy", href: "/terms" },
     { label: "Licenses", href: "/licenses" },
   ],
