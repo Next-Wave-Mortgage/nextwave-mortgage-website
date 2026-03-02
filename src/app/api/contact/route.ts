@@ -2,8 +2,6 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { z } from "zod";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 const RECIPIENTS = [
   "phil@nextwavemortgage.com",
   "ryan@nextwavemortgage.com",
@@ -21,6 +19,8 @@ const contactSchema = z.object({
 });
 
 export async function POST(request: Request) {
+  const resend = new Resend(process.env.RESEND_API_KEY);
+
   try {
     const body = await request.json();
     const result = contactSchema.safeParse(body);
