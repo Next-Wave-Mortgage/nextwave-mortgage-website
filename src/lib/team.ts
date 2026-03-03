@@ -331,7 +331,7 @@ export const teamDetails: Record<string, TeamMemberDetail> = {
     email: "addie@nextwavemortgage.com",
     phone: "617-484-3462",
     licensedStates: [],
-    applyUrl: "/apply",
+    applyUrl: "https://nextwave.my1003app.com/12565/register",
   },
   "chris-scott": {
     bio: [
