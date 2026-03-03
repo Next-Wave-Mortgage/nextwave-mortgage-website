@@ -155,7 +155,7 @@ export default function TeamMemberPage({
                         src={member.image}
                         alt={member.name}
                         fill
-                        className="origin-top scale-[1.12] object-cover"
+                        className="origin-top scale-[1.12] object-cover object-top"
                         sizes="380px"
                         priority
                       />

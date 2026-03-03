@@ -60,7 +60,7 @@ export const teamMembers: TeamMember[] = [
     slug: "janine-baeza",
     title: "Senior Loan Officer",
     nmls: "17287",
-    image: "/images/janine-baeza.jpg",
+    image: "/images/Janine-Baeza.PNG",
   },
   {
     name: "Philip Carcel Munce",

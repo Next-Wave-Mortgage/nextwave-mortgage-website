@@ -91,7 +91,7 @@ function FounderCard({
             src={member.image}
             alt={member.name}
             fill
-            className="origin-top scale-[1.12] object-cover transition-transform duration-500 group-hover:scale-[1.15]"
+            className="origin-top scale-[1.12] object-cover object-top transition-transform duration-500 group-hover:scale-[1.15]"
             sizes="(max-width: 640px) 100vw, 384px"
           />
         ) : (
@@ -185,7 +185,7 @@ function TeamCard({ member, index }: { member: TeamMember; index: number }) {
             src={member.image}
             alt={member.name}
             fill
-            className="origin-top scale-[1.12] object-cover transition-transform duration-500 group-hover:scale-[1.15]"
+            className="origin-top scale-[1.12] object-cover object-top transition-transform duration-500 group-hover:scale-[1.15]"
             sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
           />
         ) : (
