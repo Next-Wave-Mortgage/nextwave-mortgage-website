@@ -42,6 +42,13 @@ export const teamMembers: TeamMember[] = [
     leadership: true,
   },
   {
+    name: "Tyrone Jefferson",
+    slug: "tyrone-jefferson",
+    title: "Area Manager",
+    nmls: "697254",
+    image: "/images/tyrone-jefferson.jpg",
+  },
+  {
     name: "Christopher Donovan",
     slug: "christopher-donovan",
     title: "Chief Operating Officer",
@@ -68,13 +75,6 @@ export const teamMembers: TeamMember[] = [
     title: "Director Northeast Originations",
     nmls: "21393",
     image: "/images/kevin-flannery.jpg",
-  },
-  {
-    name: "Tyrone Jefferson",
-    slug: "tyrone-jefferson",
-    title: "Area Manager",
-    nmls: "697254",
-    image: "/images/tyrone-jefferson.jpg",
   },
   {
     name: "Shane Jordan",
@@ -124,6 +124,13 @@ export const teamMembers: TeamMember[] = [
     title: "Mortgage Loan Originator",
     nmls: "",
     image: "/images/lou-casey.jpg",
+  },
+  {
+    name: "Addie Gardiner",
+    slug: "addie-gardiner",
+    title: "Director of Mortgage Production | Team RFG",
+    nmls: "",
+    image: "/images/addie-gardiner.jpg",
   },
 ];
 
@@ -314,6 +321,15 @@ export const teamDetails: Record<string, TeamMemberDetail> = {
     ],
     email: "lou@nextwavemortgage.com",
     phone: "781-927-4059",
+    licensedStates: [],
+    applyUrl: "/apply",
+  },
+  "addie-gardiner": {
+    bio: [
+      "Addie is the Director of Mortgage Production for Team RFG at Next Wave Mortgage. A recent graduate of the Isenberg School of Business at UMass Amherst, she focuses on client communication, loan coordination, and creating an organized, efficient mortgage experience from application to closing.",
+    ],
+    email: "addie@nextwavemortgage.com",
+    phone: "617-484-3462",
     licensedStates: [],
     applyUrl: "/apply",
   },
