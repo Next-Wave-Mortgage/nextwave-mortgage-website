@@ -132,6 +132,13 @@ export const teamMembers: TeamMember[] = [
     nmls: "",
     image: "/images/addie-gardiner.jpg",
   },
+  {
+    name: "Erin Sadlier",
+    slug: "erin-sadlier",
+    title: "Loan Officer",
+    nmls: "36421",
+    image: "/images/Erin-Sadlier.jpg",
+  },
 ];
 
 export const leadership = teamMembers.filter((m) => m.leadership);
@@ -332,6 +339,21 @@ export const teamDetails: Record<string, TeamMemberDetail> = {
     phone: "617-484-3462",
     licensedStates: [],
     applyUrl: "https://nextwave.my1003app.com/12565/register",
+  },
+  "erin-sadlier": {
+    bio: [
+      "With a career in mortgage lending that began in 2003, Erin Sadlier brings over two decades of industry expertise to every transaction. Having navigated the housing market through various economic cycles, Erin possesses the analytical skills and deep product knowledge necessary to structure the perfect loan for her clients.",
+      "Erin believes that the cornerstone of a successful mortgage experience is education and communication. She understands that a mortgage is likely the largest financial commitment a person will make, and she is dedicated to demystifying the process. By breaking down complex financial concepts into clear, understandable terms, she empowers her borrowers to make confident decisions.",
+      "While she works with a wide variety of clients, Erin has a particular passion for working with first-time homebuyers. She loves the excitement of helping someone purchase their very first property and takes extra care to guide them through every step of the journey.",
+      "Above all, Erin is known for her diligence and reliability. She works tirelessly behind the scenes to manage strict deadlines, ensuring a smooth process and an on-time closing. When you work with Erin, you aren\u2019t just getting a loan; you are gaining a dedicated partner committed to getting you home.",
+    ],
+    email: "erin@nextwavemortgage.com",
+    phone: "978-996-7657",
+    licensedStates: [],
+    applyUrl: "https://nextwave.my1003app.com/36421/register",
+    personal: [
+      "Outside of the office, Erin is a proud and devoted wife and mother. She loves spending weekends at the park or cheering on her daughter at dance and gymnastics.",
+    ],
   },
   "chris-scott": {
     bio: [
