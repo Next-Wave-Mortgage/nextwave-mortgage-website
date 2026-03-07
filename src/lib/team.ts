@@ -139,6 +139,13 @@ export const teamMembers: TeamMember[] = [
     nmls: "36421",
     image: "/images/Erin-Sadlier.jpg",
   },
+  {
+    name: "Spencer Suderman",
+    slug: "spencer-suderman",
+    title: "Mortgage Loan Originator",
+    nmls: "",
+    image: "/images/spencer-suderman.jpg",
+  },
 ];
 
 export const leadership = teamMembers.filter((m) => m.leadership);
@@ -353,6 +360,23 @@ export const teamDetails: Record<string, TeamMemberDetail> = {
     applyUrl: "https://nextwave.my1003app.com/36421/register",
     personal: [
       "Outside of the office, Erin is a proud and devoted wife and mother. She loves spending weekends at the park or cheering on her daughter at dance and gymnastics.",
+    ],
+  },
+  "spencer-suderman": {
+    bio: [
+      "With a career built on technical precision and strategic leadership, Spencer brings a detail-oriented perspective to the mortgage industry. After years of leading corporate IT transformations with a keen eye on financing and ensuring positive investment outcomes, he understands that the key to a successful journey—especially in home financing—is a clear plan and constant communication.",
+      "Spencer's professional journey has always been centered on service, from managing high-stakes IT projects to navigating complex organizational challenges. This diverse experience has taught him the importance of reliability, integrity, and putting people first.",
+      "As a Mortgage Loan Originator at Next Wave Mortgage, Spencer leverages his background in complex problem-solving to help clients navigate the lending process with ease. His goal is to simplify the intricacies of mortgage products, ensuring that every homebuyer feels confident and empowered from application to closing.",
+    ],
+    email: "",
+    phone: "",
+    licensedStates: [],
+    applyUrl: "/apply",
+    location: "St. Augustine, Florida",
+    personal: [
+      "Originally a transplant from Los Angeles, California, Spencer and his wife now call St. Augustine, Florida home. Together, they embrace the coastal lifestyle—though they are still on a perpetual quest to find local tacos that capture that authentic Los Angeles vibe. Above all, they take immense pride in their two sons and daughter as they build their own professional careers and grow into successful, contributing citizens.",
+      "When he isn't analyzing interest rates or stock market trends, Spencer is often in the air. As an instrument-rated commercial instructor pilot with ratings for land, sea, and multi-engine aircraft, he has a deep appreciation for the discipline and focus required to navigate complex systems—technical skills that translate directly into finding the best financial paths for his clients.",
+      "Whether he is at the controls of an airplane, appreciating taco construction, or perfecting a long-fermented pizza dough in his kitchen, Spencer believes that meticulous attention to detail is the defining factor that turns a good result into a great one.",
     ],
   },
   "chris-scott": {
